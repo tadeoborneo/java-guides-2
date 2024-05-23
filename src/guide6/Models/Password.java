@@ -107,7 +107,7 @@ public class Password {
         return false;
     }
 
-    public Boolean compareTo (String password) {
+    public Boolean compareTo(String password) {
         if (this.password.equals(password))
             return true;
         else
