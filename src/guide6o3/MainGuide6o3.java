@@ -4,10 +4,7 @@ import guide6o3.Models.Series;
 import guide6o3.Models.VideoGame;
 import guide6o3.Models.VideoStore;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MainGuide6o3 {
     public static void main(String[] args) {
@@ -24,20 +21,8 @@ public class MainGuide6o3 {
         VideoGame game4 = new VideoGame("Red Dead Redemption 2", "Action-adventure", 60, "Rockstar Games");
         VideoGame game5 = new VideoGame("God of War", "Action-adventure", 40, "Santa Monica Studio");
 
-        List<Series> seriesList = new ArrayList<>();
-        List<VideoGame> videoGameList = new ArrayList<>();
-
-        seriesList.add(series1);
-        seriesList.add(series2);
-        seriesList.add(series3);
-        seriesList.add(series4);
-        seriesList.add(series5);
-
-        videoGameList.add(game1);
-        videoGameList.add(game2);
-        videoGameList.add(game3);
-        videoGameList.add(game4);
-        videoGameList.add(game5);
+        List<Series> seriesList = Arrays.asList(series1,series2,series3,series4,series5);
+        List<VideoGame> videoGameList = Arrays.asList(game1,game2,game3,game4,game5);
 
         series1.deliver();
         series5.deliver();
@@ -45,13 +30,9 @@ public class MainGuide6o3 {
         game1.deliver();
         game5.deliver();
 
-
-
         System.out.println(seriesList);
-        System.out.println(videoGameList);
-
+        System.out.println(videoGameList + "\n");
         List<VideoGame> deliveredGames = new ArrayList<>();
-
         VideoGame mostGameplayHours = videoGameList.getFirst();
         for(VideoGame v : videoGameList) {
             if (v.isDelivered())

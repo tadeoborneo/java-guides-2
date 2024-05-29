@@ -60,25 +60,39 @@ public class mainGuide6b {
 //                        .sum() / 18;
 //
 //        System.out.println(average);
-        System.out.println("--------------------EXERCISE 5--------------------------------");
-        List<Integer> numberList = Arrays.asList(1, 5, 2, 6, 23, 64, 3, 2, 3, 5, 6, 19);
-        Set<Integer> numberSet = new TreeSet<>(numberList);
-        System.out.println(numberSet.stream().toList().reversed());// ********
+//        System.out.println("--------------------EXERCISE 5--------------------------------");
+//        List<Integer> numberList = Arrays.asList(1, 5, 2, 6, 23, 64, 3, 2, 3, 5, 6, 19);
+//        Set<Integer> numberSet = new TreeSet<>(numberList);
+//        System.out.println(numberSet.stream().toList().reversed());// ********
         System.out.println("--------------------EXERCISE 6--------------------------------");
 
         Person p = new Person("Tadeo", "46112406", 19);
+        Person p1 = new Person("Miguel", "3028883", 20);
+        Person p2 = new Person("Juan", "20300720", 56);
+        Person p3 = new Person("Francisco", "3936663", 23);
 
 
+        List<Person> personList = Arrays.asList(p, p1, p3);
 
+        PersonCrud.create();
+        PersonCrud.add(p2);
+        PersonCrud.addList(personList);
+        System.out.println(PersonCrud.read());
+
+        p1.setAge(98);
+        PersonCrud.update(p1);
+        System.out.println(PersonCrud.read());
+
+        System.out.println(PersonCrud.orderedByAge());
 
     }
 
-    public static Map<Character, Integer> letterCount(String str) {
-        Map<Character, Integer> letterCountMap = new HashMap<>();
-
-        for (Character c : str.toCharArray()) {
-            letterCountMap.put(c, letterCountMap.getOrDefault(c, 0) + 1);
-        }
-        return letterCountMap;
-    }
+//    public static Map<Character, Integer> letterCount(String str) {
+//        Map<Character, Integer> letterCountMap = new HashMap<>();
+//
+//        for (Character c : str.toCharArray()) {
+//            letterCountMap.put(c, letterCountMap.getOrDefault(c, 0) + 1);
+//        }
+//        return letterCountMap;
+//    }
 }
